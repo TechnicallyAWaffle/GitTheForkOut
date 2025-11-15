@@ -11,6 +11,7 @@ public class TimelineManager : MonoBehaviour
 
     [SerializeField]
     LineRenderer lr;
+    /*
     private IEnumerator LineDraw()
     {
         float t = 0;
@@ -37,13 +38,14 @@ public class TimelineManager : MonoBehaviour
             yield return null;
         }
         lr.SetPosition(1, orig2);
-        */
+        
     }
+    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(LineDraw());
+        //StartCoroutine(LineDraw());
     }
 
     private void SetNextLinePosition()
