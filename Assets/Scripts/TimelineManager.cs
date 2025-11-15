@@ -10,14 +10,26 @@ public class TimelineManager : MonoBehaviour
     ReferenceManager referenceManager;
 
     public List<Node> nodes = new();
-
-    [SerializeField]
+    [SerializeField] private Node currentNode;
+    [SerializeField] private Node lastChoiceNode;
     LineRenderer lr;
 
     void Start()
     {
         referenceManager = ReferenceManager.Instance;
         //StartCoroutine(LineDraw());
+        nodes[0].RunNode();
+    }
+
+    private void FindAndRunNextNode()
+    {
+        currentNode.getNextNode().RunNode();
+    }
+
+    public void RunChoiceNode(ChoiceNode node)
+    {
+        lastChoiceNode = node;
+        UpdateCurrentChoiceData(node);
     }
 
     private void UpdateCurrentChoiceData(ChoiceNode node)
@@ -26,10 +38,21 @@ public class TimelineManager : MonoBehaviour
         {
             if(node.nodeImage)
                 referenceManager.nodeImage = node.nodeImage;
-            if (node.choiceImages[index])
-                referenceManager.choiceImage[index] = node.choiceImages[index];
-            if (node.choiceTexts[index] != null)
-                referenceManager.choiceText[index].text = node.choiceTexts[index];
+            if (node.choiceImages[index] && node.choiceTexts[index] != null)
+            {
+                referenceManager.choiceImages[index] = node.choiceImages[index];
+                referenceManager.choiceTexts[index].text = node.choiceTexts[index];
+                referenceManager.choiceButtons[index].onClick.AddListener(() => node.NextNode(node.nextNodes[index]));
+            }
+                
+        }
+    }
+
+    public void ClearButtonReferences()
+    {
+        for (int index = 0; index <= 4; index++)
+        {
+            referenceManager.choiceButtons[index].onClick.RemoveAllListeners();
         }
     }
 

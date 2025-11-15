@@ -6,15 +6,20 @@ public class ChoiceNode : Node
     public Sprite[] choiceImages;
     [TextAreaAttribute]
     public string[] choiceTexts;
+    public Button[] choiceButtons;
     public Node[] nextNodes;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void RunNode()
     {
-        
+        referenceManager.timelineManager.RunChoiceNode(this);
+        referenceManager.timelineManager.ClearButtonReferences();
     }
+
+    public override void NextNode(Node nextNode)
+    {
+        base.NextNode(nextNode);
+    }
+
 
     public string[] GetChoiceTexts()
     {
