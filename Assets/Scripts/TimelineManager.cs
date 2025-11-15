@@ -11,7 +11,7 @@ public class TimelineManager : MonoBehaviour
 
     [SerializeField]
     LineRenderer lr;
-    /*
+
     private IEnumerator LineDraw()
     {
         float t = 0;
@@ -29,23 +29,15 @@ public class TimelineManager : MonoBehaviour
         }
       
         
-        /*lr.SetPosition(1, orig);
         Vector3 newpos;
         for (; t < time; t += Time.deltaTime)
         {
-            newpos = Vector3.Lerp(orig, orig2, t / time);
-            lr.SetPosition(1, newpos);
+            //newpos = Vector3.Lerp(1, 1, t / time);
+            //lr.SetPosition(1, newpos);
             yield return null;
         }
-        lr.SetPosition(1, orig2);
+        //lr.SetPosition(1, orig2);
         
-    }
-    */
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //StartCoroutine(LineDraw());
     }
 
     private void SetNextLinePosition()
@@ -53,6 +45,15 @@ public class TimelineManager : MonoBehaviour
         int currentIndex = lr.positionCount++;
         //lr.SetPosition(currentIndex, );
     }
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        //StartCoroutine(LineDraw());
+    }
+
+    
 
     // Update is called once per frame
     void Update()

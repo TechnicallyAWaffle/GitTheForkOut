@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    public string nodeName; 
+
     [SerializeField] private Node nextNode;
 
-    public ChoiceScriptableObject choice1;
-    public ChoiceScriptableObject choice2;
-    public ChoiceScriptableObject choice3;
-    public ChoiceScriptableObject choice4;
-
     public Sprite nodeImage;
+    public string nodeText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,15 +15,7 @@ public class Node : MonoBehaviour
         
     }
 
-    public void GetChoices()
-    { 
-        
-    }
-
-    public void DisplayNodeChoices()
-    { 
-        
-    }
+    
 
     public Node getNextNode()
     { 
