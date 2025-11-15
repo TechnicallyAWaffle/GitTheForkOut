@@ -20,8 +20,15 @@ public class TimelineManager : MonoBehaviour
         //StartCoroutine(LineDraw());
     }
 
-    private void UpdateCurrentChoiceData()
-    { 
+    private void UpdateCurrentChoiceData(ChoiceNode node)
+    {
+        for (int index = 0; index <= 4; index++)
+        {
+            if (node.choiceImages[index])
+                referenceManager.choiceImage[index] = node.choiceImages[index];
+            if (node.choiceTexts[index] != null)
+                referenceManager.choiceText[index].text = node.choiceTexts[index];
+        }
         
     }
 
