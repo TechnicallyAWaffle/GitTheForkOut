@@ -7,10 +7,23 @@ using UnityEngine.UIElements;
 public class TimelineManager : MonoBehaviour
 {
 
+    ReferenceManager referenceManager;
+
     public List<Node> nodes = new();
 
     [SerializeField]
     LineRenderer lr;
+
+    void Start()
+    {
+        referenceManager = ReferenceManager.Instance;
+        //StartCoroutine(LineDraw());
+    }
+
+    private void UpdateCurrentChoiceData()
+    { 
+        
+    }
 
     private IEnumerator LineDraw()
     {
@@ -44,13 +57,6 @@ public class TimelineManager : MonoBehaviour
     {
         int currentIndex = lr.positionCount++;
         //lr.SetPosition(currentIndex, );
-    }
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //StartCoroutine(LineDraw());
     }
 
     

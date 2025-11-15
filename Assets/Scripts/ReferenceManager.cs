@@ -12,10 +12,7 @@ public class ReferenceManager : MonoBehaviour
     //Node Choices
     public GameObject currentChoiceObject;
     public Image choiceImage;
-    public TextMeshProUGUI currentNodeChoiceText1;
-    public TextMeshProUGUI currentNodeChoiceText2;
-    public TextMeshProUGUI currentNodeChoiceText3;
-    public TextMeshProUGUI currentNodeChoiceText4;
+    public TextMeshProUGUI[] currentNodeChoiceText1;
 
     public static ReferenceManager Instance;
 
