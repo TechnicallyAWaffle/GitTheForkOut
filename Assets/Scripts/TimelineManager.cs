@@ -24,14 +24,13 @@ public class TimelineManager : MonoBehaviour
     {
         for (int index = 0; index <= 4; index++)
         {
+            if(node.nodeImage)
+                referenceManager.nodeImage = node.nodeImage;
             if (node.choiceImages[index])
                 referenceManager.choiceImage[index] = node.choiceImages[index];
             if (node.choiceTexts[index] != null)
                 referenceManager.choiceText[index].text = node.choiceTexts[index];
         }
-
-
-        
     }
 
     private IEnumerator LineDraw()

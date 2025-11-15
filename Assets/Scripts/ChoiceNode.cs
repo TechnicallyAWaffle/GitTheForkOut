@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ChoiceNode : Node
 {
-    public Image[] choiceImages;
+    public Sprite[] choiceImages;
     [TextAreaAttribute]
     public string[] choiceTexts;
     public Node[] nextNodes;
