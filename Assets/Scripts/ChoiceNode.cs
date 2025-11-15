@@ -21,7 +21,7 @@ public class ChoiceNode : Node
         return choiceTexts;
     }
 
-    public Image[] GetChoiceImages()
+    public Sprite[] GetChoiceImages()
     {
         return choiceImages;
     }

@@ -29,6 +29,8 @@ public class TimelineManager : MonoBehaviour
             if (node.choiceTexts[index] != null)
                 referenceManager.choiceText[index].text = node.choiceTexts[index];
         }
+
+
         
     }
 
