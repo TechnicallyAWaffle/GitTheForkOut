@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,7 @@ public class TimelineManager : MonoBehaviour
     //Runtime Vars
     public float lineDrawtime;
     public float zoomSpeed;
+    public float lerpDuration;
     [SerializeField] private Node[] currentNextNodeChoices;
 
     void Start()
@@ -37,19 +39,21 @@ public class TimelineManager : MonoBehaviour
         referenceManager.currentChoiceObject.SetActive(false);
         if (nextNode)
         {
+            Debug.Log("Finding Node: " + nextNode.name);
             if (currentNode)
             {
                 StartCoroutine(DrawLineToNextNode(currentNode, nextNode));
             }
             else
                 StartCoroutine(InitialNodeWait(nextNode));
+            currentNode = nextNode;
         }
         else
         { 
             //no node so do some funny thing idk
         }
 
-        currentNode = nextNode;
+        
     }
 
     private IEnumerator InitialNodeWait(Node node)
@@ -67,8 +71,26 @@ public class TimelineManager : MonoBehaviour
         StartCoroutine(ZoomCamera(false));
     }
 
+    public IEnumerator LerpCameraToNode(Node node)
+    {
+        float timer = 0f;
+        float startTime = Time.time;
+        while (timer < 1f)
+        {
+            yield return null;
+            float elapsedTime = Time.time - startTime;
+            float t = elapsedTime / lerpDuration;
+
+            // Clamp t between 0 and 1 to prevent overshooting
+            t = Mathf.Clamp01(t);
+
+            transform.position = Vector3.Lerp(referenceManager.mainCamera.transform.position, node.transform.position, t);
+        }
+    }
+
     private IEnumerator ZoomCamera(bool isZoomOut)
     {
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("meow");
         float timer = 0f;
 
@@ -112,15 +134,6 @@ public class TimelineManager : MonoBehaviour
         FindAndRunNextNode(currentNextNodeChoices[index]);
     }
 
-
-    public void ClearButtonReferences()
-    {
-        for (int index = 0; index < 4; index++)
-        {
-            referenceManager.choiceButtons[index].onClick.RemoveAllListeners();
-        }
-    }
-
     private IEnumerator DrawLineToNextNode(Node currentNode, Node nextNode)
     {
         lr.positionCount += 1;
@@ -140,15 +153,10 @@ public class TimelineManager : MonoBehaviour
         }
         lr.SetPosition(lr.positionCount - 1, nextPosition);
         nextNode.RunNode();
+        StartCoroutine(LerpCameraToNode(nextNode));
         yield return new WaitForSeconds(0.5f);
         if(nextNode.CanGoToNextNode())
             FindAndRunNextNode(currentNode.GetNextNode());
-    }
-
-    private void SetNextLinePosition()
-    {
-        int currentIndex = lr.positionCount++;
-        //lr.SetPosition(currentIndex, );
     }
 
     

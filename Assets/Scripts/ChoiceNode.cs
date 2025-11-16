@@ -22,10 +22,8 @@ public class ChoiceNode : Node
 
     public override bool CanGoToNextNode()
     {
-        referenceManager.timelineManager.ClearButtonReferences();
         return false;   
     }
-
 
     public string[] GetChoiceTexts()
     {

@@ -355,11 +355,13 @@ MonoBehaviour:
   nodes:
   - {fileID: 198595898}
   - {fileID: 771147191}
+  - {fileID: 1106044483}
   currentNode: {fileID: 0}
   lastChoiceNode: {fileID: 0}
   lr: {fileID: 133443371}
   lineDrawtime: 1
   zoomSpeed: 1.25
+  lerpDuration: 1
   currentNextNodeChoices:
   - {fileID: 0}
   - {fileID: 0}
@@ -1178,7 +1180,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

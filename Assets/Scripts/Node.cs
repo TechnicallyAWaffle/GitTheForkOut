@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Node : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Node : MonoBehaviour
 
     public virtual void RunNode()
     {
+        GetComponent<SpriteRenderer>().enabled = true;
         Debug.Log("Running Node: " + nodeName);
         DisplayNodeText();
     }
