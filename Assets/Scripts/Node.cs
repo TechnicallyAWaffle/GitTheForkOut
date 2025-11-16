@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.U2D;
+using System;
 
 public class Node : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class Node : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = true;
         Debug.Log("Running Node: " + nodeName);
         DisplayNodeText();
+        try
+        {
+            referenceManager.audioSource.PlayOneShot(nodeMusicTrack);
+        }
+        catch (Exception ignored) { }
     }
 
     private void DisplayNodeText()

@@ -15,6 +15,7 @@ public class ReferenceManager : MonoBehaviour
     public SpriteRenderer[] choiceImages;
     public TextMeshProUGUI[] choiceTexts;
     public Button[] choiceButtons;
+    public AudioSource audioSource;
 
     public static ReferenceManager Instance;
 
