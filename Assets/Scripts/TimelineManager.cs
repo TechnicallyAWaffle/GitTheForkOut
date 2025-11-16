@@ -119,16 +119,14 @@ public class TimelineManager : MonoBehaviour
     {
         for (int index = 0; index < 4; index++)
         {
-            if(node.nodeImage)
+            if (node.nodeImage)
                 referenceManager.nodeImage.sprite = node.nodeImage;
-            if (node.choiceImages[index] && node.choiceTexts[index] != null)
-            {
+            if (node.choiceImages[index])
                 referenceManager.choiceImages[index].sprite = node.choiceImages[index];
+            if (node.choiceTexts[index] != null)
                 referenceManager.choiceTexts[index].text = node.choiceTexts[index];
-                if(node.nextNodes[index])
-                    currentNextNodeChoices[index] = node.nextNodes[index];
-            }
-                
+            if (node.nextNodes[index])
+                currentNextNodeChoices[index] = node.nextNodes[index];
         }
     }
 
