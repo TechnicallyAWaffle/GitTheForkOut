@@ -165,7 +165,7 @@ Transform:
   m_GameObject: {fileID: 4658848834462727228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -186,7 +186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeName: 
   nextNode: {fileID: 0}
-  nodeImage: {fileID: 0}
   nodeText: 
   bottomTextBox: {fileID: 2193000896358251477}
   topTextBox: {fileID: 6490722340003908028}

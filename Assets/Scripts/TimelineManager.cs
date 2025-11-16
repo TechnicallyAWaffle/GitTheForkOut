@@ -73,6 +73,8 @@ public class TimelineManager : MonoBehaviour
 
     public IEnumerator LerpCameraToNode(Node node)
     {
+        referenceManager.currentChoiceObject.transform.position = node.transform.position + new Vector3(0,0,-3);
+
         float timer = 0f;
         float startTime = Time.time;
         while (timer < 1f)
@@ -84,7 +86,8 @@ public class TimelineManager : MonoBehaviour
             // Clamp t between 0 and 1 to prevent overshooting
             t = Mathf.Clamp01(t);
 
-            transform.position = Vector3.Lerp(referenceManager.mainCamera.transform.position, node.transform.position, t);
+            referenceManager.mainCamera.transform.position = 
+                Vector3.Lerp(referenceManager.mainCamera.transform.position, node.transform.position + new Vector3(0,0,-9), t);
         }
     }
 
@@ -136,6 +139,9 @@ public class TimelineManager : MonoBehaviour
 
     private IEnumerator DrawLineToNextNode(Node currentNode, Node nextNode)
     {
+        if (referenceManager.mainCamera.orthographicSize < 9)
+            yield return new WaitForSeconds(0.75f);
+
         lr.positionCount += 1;
         float t = 0;
 
@@ -154,7 +160,7 @@ public class TimelineManager : MonoBehaviour
         lr.SetPosition(lr.positionCount - 1, nextPosition);
         nextNode.RunNode();
         StartCoroutine(LerpCameraToNode(nextNode));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         if(nextNode.CanGoToNextNode())
             FindAndRunNextNode(currentNode.GetNextNode());
     }

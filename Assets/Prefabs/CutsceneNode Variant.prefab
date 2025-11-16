@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7220167800112490158
+--- !u!1001 &1166916245692098935
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,67 +50,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4658848834462727228, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: m_Name
-      value: ChoiceNode
+      value: CutsceneNode Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 5281139972163242308, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4658848834462727228, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2542923894030747659}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
---- !u!1 &2635940627246717586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4658848834462727228, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-  m_PrefabInstance: {fileID: 7220167800112490158}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2542923894030747659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2635940627246717586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 907529e4a249ff040946165f3236f6fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeName: 
-  nextNode: {fileID: 0}
-  nodeText: 
-  bottomTextBox: {fileID: 8816969372374457723}
-  topTextBox: {fileID: 4476751511988940562}
-  useBottomTextBox: 0
-  choiceImages: []
-  choiceTexts: []
-  nextNodes: []
-  nodeImage: {fileID: 0}
---- !u!114 &4476751511988940562 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6490722340003908028, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-  m_PrefabInstance: {fileID: 7220167800112490158}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8816969372374457723 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2193000896358251477, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-  m_PrefabInstance: {fileID: 7220167800112490158}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
