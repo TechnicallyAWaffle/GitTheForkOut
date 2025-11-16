@@ -12,7 +12,7 @@ public class ReferenceManager : MonoBehaviour
     //Node Choices
     public GameObject currentChoiceObject;
     public Sprite nodeImage;
-    public Sprite[] choiceImages;
+    public SpriteRenderer[] choiceImages;
     public TextMeshProUGUI[] choiceTexts;
     public Button[] choiceButtons;
 
@@ -21,7 +21,7 @@ public class ReferenceManager : MonoBehaviour
     
 
     public static ReferenceManager GetInstance() { return Instance; }
-    void Start()
+    void Awake()
     {
         Instance = this;
     }

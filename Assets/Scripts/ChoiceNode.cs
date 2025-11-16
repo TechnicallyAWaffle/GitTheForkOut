@@ -6,18 +6,24 @@ public class ChoiceNode : Node
     public Sprite[] choiceImages;
     [TextAreaAttribute]
     public string[] choiceTexts;
-    public Button[] choiceButtons;
     public Node[] nextNodes;
+
+    protected override void Start()
+    {    
+        base.Start();
+    }
 
     public override void RunNode()
     {
+        base.RunNode();
         referenceManager.timelineManager.RunChoiceNode(this);
-        referenceManager.timelineManager.ClearButtonReferences();
     }
 
-    public override void NextNode(Node nextNode)
+    public override void NextNode()
     {
-        base.NextNode(nextNode);
+        base.NextNode();
+        referenceManager.timelineManager.ClearButtonReferences();
+        
     }
 
 

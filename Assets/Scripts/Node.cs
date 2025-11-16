@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Node : MonoBehaviour
@@ -10,31 +11,41 @@ public class Node : MonoBehaviour
     public string nodeText;
     [SerializeField] private TextMeshProUGUI bottomTextBox;
     [SerializeField] private TextMeshProUGUI topTextBox;
-    private bool useBottomTextBox = false;
+    [SerializeField] private bool useBottomTextBox = false;
  
 
     protected ReferenceManager referenceManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         referenceManager = ReferenceManager.Instance;
+        nodeName = gameObject.name;
     }
 
 
     public virtual void RunNode()
     {
+        Debug.Log("Running Node: " + nodeName);
         DisplayNodeText();
     }
 
     private void DisplayNodeText()
-    { 
-        nodeText = useBottomTextBox ? bottomTextBox.text : topTextBox.text;
+    {
+        if (useBottomTextBox)
+        {
+            bottomTextBox.text = nodeText;
+        }
+        else
+        {
+            
+            topTextBox.text = nodeText;
+        }
     }
 
-    public virtual void NextNode(Node nextNode)
+    public virtual void NextNode()
     {
-        nextNode.RunNode();
+        //referenceManager.timelineManager.FindAndRunNextNode(nextNode);
     }
 
     public void ClearText()
@@ -43,8 +54,8 @@ public class Node : MonoBehaviour
         topTextBox.text = "";
     }
 
-    public Node getNextNode()
-    { 
+    public Node GetNextNode()
+    {
         return nextNode;
     }
 

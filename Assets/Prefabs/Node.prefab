@@ -188,8 +188,9 @@ MonoBehaviour:
   nextNode: {fileID: 0}
   nodeImage: {fileID: 0}
   nodeText: 
-  bottomTextBox: {fileID: 0}
-  topTextBox: {fileID: 0}
+  bottomTextBox: {fileID: 2193000896358251477}
+  topTextBox: {fileID: 6490722340003908028}
+  useBottomTextBox: 0
 --- !u!212 &7012873160541236386
 SpriteRenderer:
   m_ObjectHideFlags: 0
