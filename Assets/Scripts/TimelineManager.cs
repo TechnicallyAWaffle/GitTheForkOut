@@ -1,9 +1,12 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class TimelineManager : MonoBehaviour
 {
@@ -17,6 +20,8 @@ public class TimelineManager : MonoBehaviour
 
     //Runtime Vars
     public float lineDrawtime;
+    public float zoomSpeed;
+    [SerializeField] private Node[] currentNextNodeChoices;
 
     void Start()
     {
@@ -34,8 +39,6 @@ public class TimelineManager : MonoBehaviour
         {
             if (currentNode)
             {
-                currentNode.NextNode();
-                currentNode.RunNode();
                 StartCoroutine(DrawLineToNextNode(currentNode, nextNode));
             }
             else
@@ -61,23 +64,54 @@ public class TimelineManager : MonoBehaviour
         lastChoiceNode = node;
         UpdateCurrentChoiceData(node);
         referenceManager.currentChoiceObject.SetActive(true);
+        StartCoroutine(ZoomCamera(false));
     }
+
+    private IEnumerator ZoomCamera(bool isZoomOut)
+    {
+        Debug.Log("meow");
+        float timer = 0f;
+
+        while (timer < 1f)
+        {
+            timer += Time.deltaTime * zoomSpeed;
+
+            if(isZoomOut)
+                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(0.05f, 9f, timer);
+            else
+                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(9f, 0.05f, timer);
+            yield return null; // Wait for the next frame
+        }
+
+        if(isZoomOut)
+            referenceManager.mainCamera.fieldOfView = 9f;
+        else
+            referenceManager.mainCamera.fieldOfView = 0.05f;
+    }
+
 
     private void UpdateCurrentChoiceData(ChoiceNode node)
     {
         for (int index = 0; index < 4; index++)
         {
             if(node.nodeImage)
-                referenceManager.nodeImage = node.nodeImage;
-            if (node.choiceImages[index] && node.choiceTexts[index] != null)
+                referenceManager.nodeImage.sprite = node.nodeImage;
+            if (node.choiceImages[index] && node.choiceTexts[index] != null && node.nextNodes[index])
             {
                 referenceManager.choiceImages[index].sprite = node.choiceImages[index];
                 referenceManager.choiceTexts[index].text = node.choiceTexts[index];
-                referenceManager.choiceButtons[index].onClick.AddListener(() => FindAndRunNextNode(node.nextNodes[index]));
+                currentNextNodeChoices[index] = node.nextNodes[index];
             }
                 
         }
     }
+
+    public void NextNodeBasedOnChoice(int index)
+    {
+        StartCoroutine(ZoomCamera(true));
+        FindAndRunNextNode(currentNextNodeChoices[index]);
+    }
+
 
     public void ClearButtonReferences()
     {
@@ -105,8 +139,10 @@ public class TimelineManager : MonoBehaviour
             yield return null;
         }
         lr.SetPosition(lr.positionCount - 1, nextPosition);
+        nextNode.RunNode();
         yield return new WaitForSeconds(0.5f);
-        FindAndRunNextNode(currentNode.GetNextNode());
+        if(nextNode.CanGoToNextNode())
+            FindAndRunNextNode(currentNode.GetNextNode());
     }
 
     private void SetNextLinePosition()

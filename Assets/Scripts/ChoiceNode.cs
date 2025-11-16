@@ -7,7 +7,7 @@ public class ChoiceNode : Node
     [TextAreaAttribute]
     public string[] choiceTexts;
     public Node[] nextNodes;
-    public Image nodeImage;
+    public Sprite nodeImage;
 
     protected override void Start()
     {    
@@ -20,11 +20,10 @@ public class ChoiceNode : Node
         referenceManager.timelineManager.RunChoiceNode(this);
     }
 
-    public override void NextNode()
+    public override bool CanGoToNextNode()
     {
-        base.NextNode();
         referenceManager.timelineManager.ClearButtonReferences();
-        
+        return false;   
     }
 
 

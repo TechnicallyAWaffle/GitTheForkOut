@@ -42,8 +42,9 @@ public class Node : MonoBehaviour
         }
     }
 
-    public virtual void NextNode()
+    public virtual bool CanGoToNextNode()
     {
+        return true;
         //referenceManager.timelineManager.FindAndRunNextNode(nextNode);
     }
 

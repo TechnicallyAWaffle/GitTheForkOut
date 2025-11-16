@@ -11,7 +11,7 @@ public class ReferenceManager : MonoBehaviour
 
     //Node Choices
     public GameObject currentChoiceObject;
-    public Image nodeImage;
+    public SpriteRenderer nodeImage;
     public SpriteRenderer[] choiceImages;
     public TextMeshProUGUI[] choiceTexts;
     public Button[] choiceButtons;
