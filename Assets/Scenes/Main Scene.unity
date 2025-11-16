@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IgnoreMouseNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: c9a31bb84678def469b516f11c7c199b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -579,6 +583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OvenMittsNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f4032b0fb443064db2360efcb8251a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1320,6 +1328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditCardNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ee04c387df654443b1bf5f1069b8d0d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1392,6 +1404,10 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 1843720899}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f9aad73414f774583c34e461fb1c1d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1639,6 +1655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BareHandsNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b34f87bcc7ad53478f174c9f799943a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1669,6 +1689,10 @@ PrefabInstance:
       propertyPath: nodeImage
       value: 
       objectReference: {fileID: 8957861085520819248, guid: 7b27e90d480fdff4dad1f2b139377d5e, type: 3}
+    - target: {fileID: 2542923894030747659, guid: c15e349ad7911bf47a1d6f677c63f2e7, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 4851463da56fcf04187276e0b82e1232, type: 3}
     - target: {fileID: 2542923894030747659, guid: c15e349ad7911bf47a1d6f677c63f2e7, type: 3}
       propertyPath: nextNodes.Array.size
       value: 4
@@ -1968,6 +1992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SplashWaterNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b34f87bcc7ad53478f174c9f799943a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2284,6 +2312,10 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 822552892}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: d93533dbcfb4a264aa645108b086e675, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2356,6 +2388,10 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 1037952941}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: d182c1df6d104b24bbc4efe5ec99e67c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2417,6 +2453,10 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 1209168126}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: ed20bea14924a8040850d2fa19bc96e5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2572,6 +2612,10 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 1430265006}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: f29a9eb6016085146b7bb715bd2953f0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3267,6 +3311,10 @@ PrefabInstance:
       propertyPath: nodeText
       value: Merge Conflict
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: ec150c15982c0124fa0d36c825bdb892, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3681,6 +3729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlipRocksNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: f3aaca6939bc99144a3b5d30bfac6c03, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3770,6 +3822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreamMouseNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: bc61e5bc3f6d61d4ba7d322ca8430795, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4319,6 +4375,10 @@ PrefabInstance:
       value: Your Friend's House Burned Down
       objectReference: {fileID: 0}
     - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 664b6479bb502de42af7929df22a5769, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: useBottomTextBox
       value: 1
       objectReference: {fileID: 0}
@@ -4385,6 +4445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThrowBlanketNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 47b55361abb04ac4eadbf645dd6f9e58, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4545,6 +4609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnockDoorNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cbd4ce67bcb05d409a4da8e4e296469, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
