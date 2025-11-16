@@ -23,6 +23,9 @@ public class TimelineManager : MonoBehaviour
     public float lineDrawtime;
     public float zoomSpeed;
     public float lerpDuration;
+    public float defaultCameraSize;
+    public float choiceCameraSize;
+    public float cutsceneCameraSize;
     [SerializeField] private Node[] currentNextNodeChoices;
 
     void Start()
@@ -32,6 +35,7 @@ public class TimelineManager : MonoBehaviour
         FindAndRunNextNode(nodes[0]);
         lr.positionCount = 1;
         lr.SetPosition(0, nodes[0].transform.position);
+        referenceManager.mainCamera.orthographicSize = defaultCameraSize;
     }
 
     public void FindAndRunNextNode(Node nextNode)
@@ -68,8 +72,14 @@ public class TimelineManager : MonoBehaviour
         lastChoiceNode = node;
         UpdateCurrentChoiceData(node);
         referenceManager.currentChoiceObject.SetActive(true);
-        StartCoroutine(ZoomCamera(false));
+        StartCoroutine(ZoomCamera(false, choiceCameraSize));
     }
+
+    public void RunCutsceneNode(CutsceneNode node)
+    {
+        StartCoroutine(ZoomCamera(false, cutsceneCameraSize));
+    }
+
 
     public IEnumerator LerpCameraToNode(Node node)
     {
@@ -91,7 +101,7 @@ public class TimelineManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ZoomCamera(bool isZoomOut)
+    private IEnumerator ZoomCamera(bool isZoomOut, float cameraSize)
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("meow");
@@ -102,16 +112,16 @@ public class TimelineManager : MonoBehaviour
             timer += Time.deltaTime * zoomSpeed;
 
             if(isZoomOut)
-                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(0.05f, 9f, timer);
+                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(cameraSize, defaultCameraSize, timer);
             else
-                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(9f, 0.05f, timer);
+                referenceManager.mainCamera.orthographicSize = Mathf.Lerp(defaultCameraSize, cameraSize, timer);
             yield return null; // Wait for the next frame
         }
 
         if(isZoomOut)
-            referenceManager.mainCamera.fieldOfView = 9f;
+            referenceManager.mainCamera.fieldOfView = defaultCameraSize;
         else
-            referenceManager.mainCamera.fieldOfView = 0.05f;
+            referenceManager.mainCamera.fieldOfView = cameraSize;
     }
 
 
@@ -132,7 +142,7 @@ public class TimelineManager : MonoBehaviour
 
     public void NextNodeBasedOnChoice(int index)
     {
-        StartCoroutine(ZoomCamera(true));
+        StartCoroutine(ZoomCamera(true, choiceCameraSize));
         FindAndRunNextNode(currentNextNodeChoices[index]);
     }
 
@@ -157,11 +167,14 @@ public class TimelineManager : MonoBehaviour
             yield return null;
         }
         lr.SetPosition(lr.positionCount - 1, nextPosition);
-        nextNode.RunNode();
         StartCoroutine(LerpCameraToNode(nextNode));
         yield return new WaitForSeconds(1f);
-        if(nextNode.CanGoToNextNode())
+        nextNode.RunNode();
+        if (nextNode.CanGoToNextNode())
+        {
             FindAndRunNextNode(currentNode.GetNextNode());
+        }
+            
     }
 
     

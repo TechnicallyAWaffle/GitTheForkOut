@@ -413,6 +413,9 @@ MonoBehaviour:
   lineDrawtime: 1
   zoomSpeed: 1
   lerpDuration: 1
+  defaultCameraSize: 9
+  choiceCameraSize: 0.05
+  cutsceneCameraSize: 0.1
   currentNextNodeChoices:
   - {fileID: 0}
   - {fileID: 0}
