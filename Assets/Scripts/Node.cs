@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public string nodeName; 
+    [SerializeField] public string nodeName; 
     [SerializeField] private Node nextNode;
-    public Sprite nodeImage;
     public string nodeText;
     [SerializeField] private TextMeshProUGUI bottomTextBox;
     [SerializeField] private TextMeshProUGUI topTextBox;
