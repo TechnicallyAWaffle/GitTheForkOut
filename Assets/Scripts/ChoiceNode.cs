@@ -7,6 +7,7 @@ public class ChoiceNode : Node
     [TextAreaAttribute]
     public string[] choiceTexts;
     public Node[] nextNodes;
+    public Image nodeImage;
 
     protected override void Start()
     {    
