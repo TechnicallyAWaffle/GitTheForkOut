@@ -6,6 +6,7 @@ using UnityEngine.U2D;
 
 public class Node : MonoBehaviour
 {
+    public AudioClip nodeMusicTrack;
     [SerializeField] public string nodeName; 
     [SerializeField] private Node nextNode;
     public string nodeText;
