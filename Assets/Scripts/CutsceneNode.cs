@@ -15,6 +15,11 @@ public class CutsceneNode : Node
     public override void RunNode()
     {
         base.RunNode();
+        referenceManager.timelineManager.RunCutsceneNode(this);
         player.Play();
+    }
+    public override bool CanGoToNextNode()
+    {
+        return false;
     }
 }
