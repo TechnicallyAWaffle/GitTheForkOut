@@ -9,7 +9,7 @@ public class Node : MonoBehaviour
 {
     public AudioClip nodeMusicTrack;
     [SerializeField] public string nodeName; 
-    [SerializeField] private Node nextNode;
+    [SerializeField] protected Node nextNode;
     public string nodeText;
     [SerializeField] private TextMeshProUGUI bottomTextBox;
     [SerializeField] private TextMeshProUGUI topTextBox;
@@ -46,7 +46,6 @@ public class Node : MonoBehaviour
         }
         else
         {
-            
             topTextBox.text = nodeText;
         }
     }

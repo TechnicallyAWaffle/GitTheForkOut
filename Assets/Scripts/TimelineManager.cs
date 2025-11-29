@@ -41,6 +41,8 @@ public class TimelineManager : MonoBehaviour
     public void FindAndRunNextNode(Node nextNode)
     {
         referenceManager.currentChoiceObject.SetActive(false);
+        referenceManager.audioSource.Stop();
+  
         if (nextNode)
         {
             Debug.Log("Finding Node: " + nextNode.name);
@@ -72,11 +74,27 @@ public class TimelineManager : MonoBehaviour
         lastChoiceNode = node;
         UpdateCurrentChoiceData(node);
         referenceManager.currentChoiceObject.SetActive(true);
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (referenceManager.choiceTexts[i].text == "")
+            {
+                referenceManager.choiceTexts[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                referenceManager.choiceTexts[i].gameObject.SetActive(true);
+            }
+                
+        }
+        referenceManager.VideoCanvas.SetActive(false);
         StartCoroutine(ZoomCamera(false, choiceCameraSize));
     }
 
     public void RunCutsceneNode(CutsceneNode node)
     {
+        for (int i = 0; i < 4; i++) referenceManager.choiceTexts[i].text = "";
+        referenceManager.VideoCanvas.SetActive(true);
         StartCoroutine(ZoomCamera(false, cutsceneCameraSize));
     }
 

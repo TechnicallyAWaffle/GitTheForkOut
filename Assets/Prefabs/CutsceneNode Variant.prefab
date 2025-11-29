@@ -52,8 +52,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutsceneNode Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5281139972163242308, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4658848834462727228, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8795916977423704630}
   m_SourcePrefab: {fileID: 100100000, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+--- !u!114 &1035443732299109026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2193000896358251477, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+  m_PrefabInstance: {fileID: 1166916245692098935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5341855956369940683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6490722340003908028, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+  m_PrefabInstance: {fileID: 1166916245692098935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5806888625337046347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4658848834462727228, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+  m_PrefabInstance: {fileID: 1166916245692098935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8795916977423704630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806888625337046347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c629e5245bf66a2499bd9dc0c4d097f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeMusicTrack: {fileID: 0}
+  nodeName: 
+  nextNode: {fileID: 0}
+  nodeText: 
+  bottomTextBox: {fileID: 1035443732299109026}
+  topTextBox: {fileID: 5341855956369940683}
+  useBottomTextBox: 0
+  player: {fileID: 0}
+  clip: {fileID: 0}
