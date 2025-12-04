@@ -10,6 +10,7 @@ public class ReferenceManager : MonoBehaviour
     public TimelineManager timelineManager;
 
     //Node Choices
+    [Header("Node Choices")]
     public GameObject currentChoiceObject;
     public GameObject VideoRenderer;
     public GameObject VideoCanvas;
@@ -18,6 +19,11 @@ public class ReferenceManager : MonoBehaviour
     public TextMeshProUGUI[] choiceTexts;
     public Button[] choiceButtons;
     public AudioSource audioSource;
+
+    [Header("Nodes")]
+
+    public GameObject nodeParentThatContainsAllNodes;
+
 
     public static ReferenceManager Instance;
 

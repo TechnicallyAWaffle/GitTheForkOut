@@ -18,7 +18,7 @@ public class CutsceneNode : Node
     public override void RunNode()
     {
         base.RunNode();
-        referenceManager.timelineManager.RunCutsceneNode(this);
+        timelineManager.RunCutsceneNode(this);
         player.loopPointReached += EnterNextNode;
         player.clip = this.clip;
         referenceManager.currentChoiceObject.SetActive(true);
@@ -33,6 +33,6 @@ public class CutsceneNode : Node
     {
         // Play the particle effect when the video reaches the end.  
         vp.clip = null;
-        referenceManager.timelineManager.FindAndRunNextNode(nextNode);
+        timelineManager.FindAndRunNextNode(nextNode);
     }
 }

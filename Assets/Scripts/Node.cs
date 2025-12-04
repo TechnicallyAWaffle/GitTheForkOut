@@ -17,11 +17,13 @@ public class Node : MonoBehaviour
  
 
     protected ReferenceManager referenceManager;
+    protected TimelineManager timelineManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
         referenceManager = ReferenceManager.Instance;
+        timelineManager = referenceManager.timelineManager;
         nodeName = gameObject.name;
     }
 

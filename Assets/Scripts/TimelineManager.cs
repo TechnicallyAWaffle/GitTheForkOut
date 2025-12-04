@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -13,6 +14,8 @@ public class TimelineManager : MonoBehaviour
 {
 
     ReferenceManager referenceManager;
+    //Refs
+    private Camera mainCamera;
 
     public List<Node> nodes = new();
     [SerializeField] private Node currentNode;
@@ -31,6 +34,11 @@ public class TimelineManager : MonoBehaviour
     void Start()
     {
         referenceManager = ReferenceManager.Instance;
+        this.mainCamera = referenceManager.mainCamera;
+
+        PopulateNodeListAndHideAllNodes();
+        ShowNode(nodes[0]);
+
         //StartCoroutine(LineDraw());
         FindAndRunNextNode(nodes[0]);
         lr.positionCount = 1;
@@ -38,8 +46,32 @@ public class TimelineManager : MonoBehaviour
         referenceManager.mainCamera.orthographicSize = defaultCameraSize;
     }
 
+    #region Node Visibility Stuff
+
+    private void PopulateNodeListAndHideAllNodes()
+    {
+        foreach (Node node in referenceManager.nodeParentThatContainsAllNodes.transform.GetComponentsInChildren<Node>())
+        {
+            nodes.Add(node);
+            node.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowNode(Node node)
+    {
+        node.gameObject.SetActive(true);
+    }
+
+
+    #endregion
+
+
     public void FindAndRunNextNode(Node nextNode)
     {
+
+        if (mainCamera.orthographicSize != defaultCameraSize)
+            StartCoroutine(ZoomCamera(true, mainCamera.orthographicSize));
+
         referenceManager.currentChoiceObject.SetActive(false);
         referenceManager.audioSource.Stop();
   
@@ -160,7 +192,6 @@ public class TimelineManager : MonoBehaviour
 
     public void NextNodeBasedOnChoice(int index)
     {
-        StartCoroutine(ZoomCamera(true, choiceCameraSize));
         FindAndRunNextNode(currentNextNodeChoices[index]);
     }
 
@@ -169,22 +200,27 @@ public class TimelineManager : MonoBehaviour
         if (referenceManager.mainCamera.orthographicSize < 9)
             yield return new WaitForSeconds(0.75f);
 
-        lr.positionCount += 1;
-        float t = 0;
-
-        Vector3[] positions = new Vector3[lr.positionCount];
-        lr.GetPositions(positions);
-        Vector3 lastPosition = currentNode.transform.position + new Vector3(0, 0, 1);
-        Vector3 nextPosition = nextNode.transform.position + new Vector3(0, 0, 1);
-
-        lr.SetPosition(lr.positionCount - 1, lastPosition);
-        //Draw Line
-        for (; t < lineDrawtime; t += Time.deltaTime)
+        if (!nextNode.gameObject.activeSelf)
         {
-            lr.SetPosition(lr.positionCount-1, Vector3.Lerp(lastPosition, nextPosition, t / lineDrawtime));
-            yield return null;
+            lr.positionCount += 1;
+            float t = 0;
+
+            Vector3[] positions = new Vector3[lr.positionCount];
+            lr.GetPositions(positions);
+            Vector3 lastPosition = currentNode.transform.position + new Vector3(0, 0, 1);
+            Vector3 nextPosition = nextNode.transform.position + new Vector3(0, 0, 1);
+
+            lr.SetPosition(lr.positionCount - 1, lastPosition);
+            //Draw Line
+            for (; t < lineDrawtime; t += Time.deltaTime)
+            {
+                lr.SetPosition(lr.positionCount - 1, Vector3.Lerp(lastPosition, nextPosition, t / lineDrawtime));
+                yield return null;
+            }
+            lr.SetPosition(lr.positionCount - 1, nextPosition);
         }
-        lr.SetPosition(lr.positionCount - 1, nextPosition);
+
+        ShowNode(nextNode);
         StartCoroutine(LerpCameraToNode(nextNode));
         yield return new WaitForSeconds(1f);
         nextNode.RunNode();

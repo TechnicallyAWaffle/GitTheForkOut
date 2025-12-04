@@ -314,10 +314,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: c9a31bb84678def469b516f11c7c199b, type: 3}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -371,6 +367,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1470261638}
     - target: {fileID: 8795916977423704630, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: c9a31bb84678def469b516f11c7c199b, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: nodeMusicTrack
       value: 
       objectReference: {fileID: 8300000, guid: c9a31bb84678def469b516f11c7c199b, type: 3}
@@ -476,29 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e16d4061d82a44f8b5eec29d292d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodes:
-  - {fileID: 1180619668}
-  - {fileID: 1986235123}
-  - {fileID: 1594771747}
-  - {fileID: 0}
-  - {fileID: 109915837}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1209168126}
-  - {fileID: 0}
-  - {fileID: 1684590012}
-  - {fileID: 455206909}
-  - {fileID: 1843720899}
-  - {fileID: 1280524218}
-  - {fileID: 1026279183}
-  - {fileID: 743835492}
-  - {fileID: 243482079}
-  - {fileID: 1430265006}
-  - {fileID: 1207222055}
-  - {fileID: 1037952941}
+  nodes: []
   currentNode: {fileID: 0}
   lastChoiceNode: {fileID: 0}
   lr: {fileID: 133443371}
@@ -987,17 +965,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4097259294268900144, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
   m_PrefabInstance: {fileID: 828517171}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &243482079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-  m_PrefabInstance: {fileID: 828517171}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1769f5a22992c0747ab86528aa01d5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &311881627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,10 +1342,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: 0ee04c387df654443b1bf5f1069b8d0d, type: 3}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2
@@ -1432,6 +1395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1470261638}
     - target: {fileID: 8795916977423704630, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ee04c387df654443b1bf5f1069b8d0d, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: nodeMusicTrack
       value: 
       objectReference: {fileID: 8300000, guid: 0ee04c387df654443b1bf5f1069b8d0d, type: 3}
@@ -2409,14 +2376,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nextNode
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: d93533dbcfb4a264aa645108b086e675, type: 3}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -2474,6 +2433,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1209168126}
     - target: {fileID: 8795916977423704630, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: d93533dbcfb4a264aa645108b086e675, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nextNode
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: nodeMusicTrack
       value: 
       objectReference: {fileID: 8300000, guid: d93533dbcfb4a264aa645108b086e675, type: 3}
@@ -3212,17 +3179,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4097259294268900144, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
   m_PrefabInstance: {fileID: 414144118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1180619668 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-  m_PrefabInstance: {fileID: 414144118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1769f5a22992c0747ab86528aa01d5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1207222054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4097259294268900144, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
@@ -4029,6 +3985,7 @@ MonoBehaviour:
   - {fileID: 1687168466}
   - {fileID: 361240563}
   audioSource: {fileID: 1493921027}
+  nodeParentThatContainsAllNodes: {fileID: 590331688}
 --- !u!4 &1493921026
 Transform:
   m_ObjectHideFlags: 0
@@ -4149,10 +4106,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: f3aaca6939bc99144a3b5d30bfac6c03, type: 3}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2
@@ -4206,6 +4159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1470261638}
     - target: {fileID: 8795916977423704630, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: f3aaca6939bc99144a3b5d30bfac6c03, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: nodeMusicTrack
       value: 
       objectReference: {fileID: 8300000, guid: f3aaca6939bc99144a3b5d30bfac6c03, type: 3}
@@ -4965,26 +4922,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nextNode
-      value: 
-      objectReference: {fileID: 109915837}
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeText
-      value: Your Friend's House Burned Down
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: 664b6479bb502de42af7929df22a5769, type: 3}
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: useBottomTextBox
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5037,6 +4974,26 @@ PrefabInstance:
       propertyPath: nextNode
       value: 
       objectReference: {fileID: 109915837}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nextNode
+      value: 
+      objectReference: {fileID: 109915837}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeText
+      value: Your Friend's House Burned Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 664b6479bb502de42af7929df22a5769, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
+      propertyPath: useBottomTextBox
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5214,10 +5171,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 590331689}
     m_Modifications:
-    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
-      propertyPath: nodeMusicTrack
-      value: 
-      objectReference: {fileID: 8300000, guid: 4cbd4ce67bcb05d409a4da8e4e296469, type: 3}
     - target: {fileID: 2949254923454048839, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2
@@ -5271,6 +5224,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1470261638}
     - target: {fileID: 8795916977423704630, guid: 53fe8a29471a8cb4f9773602b1850684, type: 3}
+      propertyPath: nodeMusicTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cbd4ce67bcb05d409a4da8e4e296469, type: 3}
+    - target: {fileID: 5744673620874624687, guid: 1213c9c2f8fd4cd4f8aedb7ae89c6bba, type: 3}
       propertyPath: nodeMusicTrack
       value: 
       objectReference: {fileID: 8300000, guid: 4cbd4ce67bcb05d409a4da8e4e296469, type: 3}
